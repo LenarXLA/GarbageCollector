@@ -1,0 +1,31 @@
+﻿using System;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 0; i <= 1000000; i++)
+            {
+                MyClass obj = new MyClass();
+                obj.Dispose();
+            }
+
+            Console.Read();
+        }
+    }
+
+    public class MyClass : IDisposable
+    {
+        ~MyClass()
+        {
+            //Unmanaged code clean up
+        }
+
+        public void Dispose()
+        {
+            // Unmanaged code clean up!
+            GC.SuppressFinalize(true);
+        }
+    }
+}

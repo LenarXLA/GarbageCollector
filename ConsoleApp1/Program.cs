@@ -19,7 +19,6 @@ namespace ConsoleApp1
     {
         ~MyClass()
         {
-            //Unmanaged code clean up
         }
 
         public void Dispose()
